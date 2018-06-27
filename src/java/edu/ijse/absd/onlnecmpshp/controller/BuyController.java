@@ -89,6 +89,7 @@ public class BuyController extends HttpServlet {
                     + "     <th>Qty</th>"
                     + "     <th>Unit Price (Rs.)</th>"
                     + "     <th>Amount (Rs.)</th>"
+                    + "     <th>Remove 1 item</th>"
                     + " </tr>");
             for (ItemDto showItem : cart) {
 
@@ -101,6 +102,7 @@ public class BuyController extends HttpServlet {
                         + "     <td>" + showItem.getQtyOnHand() + "</td>"
                         + "     <td>" + showItem.getUnitPrice() + "</td>"
                         + "     <td>" + amount + "</td>"
+                        + "     <td><a href='RemoveController?code='" + showItem.getItemCode() + "'>Remove</a></td>"
                         + "</tr>");
             }
             out.print("</table>"
